@@ -1,0 +1,124 @@
+{
+  "@context": [
+    "https://schema.org",
+    {
+      "salary": "https://example.org/salary#",
+      "employee": "customer",
+      "employer": "provider",
+      "earnings": "salary:earnings",
+      "deductions": "salary:deductions",
+      "employerContributions": "salary:employerContributions",
+      "payPeriod": "salary:payPeriod",
+      "component": "salary:component"
+    }
+  ],
+  "@type": ["Invoice", "salary:SalarySlip"],
+  "identifier": "SAL-2025-07",
+  "dateCreated": "2025-07-31",
+  "paymentDueDate": "2025-08-01",
+  "accountId": "employer-payroll-account",
+  "payPeriod": {
+    "@type": "salary:PayPeriod",
+    "startDate": "2025-07-01",
+    "endDate": "2025-07-31"
+  },
+  "employer": {
+    "@type": "Organization",
+    "name": "Acme Pvt Ltd",
+    "taxID": "AAACA1234A",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "12 MG Road",
+      "addressLocality": "Bengaluru",
+      "addressRegion": "KA",
+      "postalCode": "560001",
+      "addressCountry": "IN"
+    }
+  },
+  "employee": {
+    "@type": "Person",
+    "name": "Jane Doe",
+    "identifier": [
+      {
+        "@type": "PropertyValue",
+        "propertyID": "employee-id",
+        "value": "EMP-00123"
+      },
+      {
+        "@type": "PropertyValue",
+        "propertyID": "IN-PAN",
+        "value": "ABCDE1234F"
+      }
+    ],
+    "jobTitle": "Senior Analyst"
+  },
+  "earnings": [
+    {
+      "@type": "salary:SalaryComponent",
+      "component": "Basic Salary",
+      "amount": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": 75000
+      }
+    },
+    {
+      "@type": "salary:SalaryComponent",
+      "component": "Housing Allowance",
+      "amount": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": 30000
+      }
+    }
+  ],
+  "deductions": [
+    {
+      "@type": "salary:SalaryComponent",
+      "component": "Income Tax",
+      "amount": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": 9000
+      }
+    },
+    {
+      "@type": "salary:SalaryComponent",
+      "component": "Employee PF Contribution",
+      "amount": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": 7800
+      }
+    }
+  ],
+  "employerContributions": [
+    {
+      "@type": "salary:SalaryComponent",
+      "component": "Employer PF Contribution",
+      "amount": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": 7800
+      }
+    }
+  ],
+  "totals": {
+    "@type": "salary:SalaryTotals",
+    "grossEarnings": {
+      "@type": "MonetaryAmount",
+      "currency": "INR",
+      "value": 105000
+    },
+    "totalDeductions": {
+      "@type": "MonetaryAmount",
+      "currency": "INR",
+      "value": 16800
+    },
+    "netPay": {
+      "@type": "MonetaryAmount",
+      "currency": "INR",
+      "value": 88200
+    }
+  }
+}

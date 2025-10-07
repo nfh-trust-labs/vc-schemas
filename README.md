@@ -61,19 +61,6 @@ Each schema can be referenced directly or embedded in verifiable credentials:
   }
 }
 ```
-
-### Validating Schemas
-
-All schemas follow JSON-LD format and can be validated using standard JSON-LD processors:
-
-```bash
-# Install jsonld CLI tool
-npm install -g jsonld-cli
-
-# Validate schema
-jsonld format --validate schemas/salary-slip/schema.json
-```
-
 ## Contributing
 
 ### Adding New Schemas

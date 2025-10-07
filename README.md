@@ -106,5 +106,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Maintainer
 
 **Networks for Humanity**
-
-Building open standards and digital public infrastructure for verifiable credentials.

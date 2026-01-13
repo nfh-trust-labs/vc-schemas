@@ -20,7 +20,6 @@ This credential is issued by electricity distribution companies (DISCOMs) when a
 | programName | Human-readable program name | Yes |
 | programCode | Unique program identifier (e.g., P2P-2025) | Yes |
 | enrollmentDate | Date of enrollment | Yes |
-| validFrom | Start date when enrollment becomes effective | No |
 | validUntil | End date when enrollment expires | No |
 
 ## Files

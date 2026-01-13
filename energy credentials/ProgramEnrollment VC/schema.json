@@ -106,11 +106,6 @@
                     "format": "date",
                     "description": "Date when the consumer enrolled in the program"
                 },
-                "validFrom": {
-                    "type": "string",
-                    "format": "date",
-                    "description": "Optional start date when the enrollment becomes effective"
-                },
                 "validUntil": {
                     "type": "string",
                     "format": "date",

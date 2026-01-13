@@ -1,6 +1,6 @@
 # Verifiable Credential Schemas
 
-A collection of standardized schemas for Verifiable Credentials (VCs), aligned with [Schema.org](https://schema.org) vocabulary wherever applicable.
+A collection of schemas for Verifiable Credentials (VCs), aligned with [Schema.org](https://schema.org) vocabulary wherever applicable.
 
 ## Overview
 

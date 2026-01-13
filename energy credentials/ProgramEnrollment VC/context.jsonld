@@ -31,10 +31,6 @@
                     "@id": "discom:enrollmentDate",
                     "@type": "xsd:date"
                 },
-                "enrollmentStatus": {
-                    "@id": "discom:enrollmentStatus",
-                    "@type": "xsd:string"
-                },
                 "validFrom": {
                     "@id": "discom:validFrom",
                     "@type": "xsd:date"

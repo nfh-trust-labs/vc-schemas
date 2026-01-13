@@ -20,18 +20,8 @@ This credential is issued by electricity distribution companies (DISCOMs) when a
 | programName | Human-readable program name | Yes |
 | programCode | Unique program identifier (e.g., P2P-2025) | Yes |
 | enrollmentDate | Date of enrollment | Yes |
-| enrollmentStatus | ACTIVE / PENDING / SUSPENDED / TERMINATED | No |
 | validFrom | Start date when enrollment becomes effective | No |
 | validUntil | End date when enrollment expires | No |
-
-## Enrollment Status
-
-| Status | Description |
-| :---- | :---- |
-| ACTIVE | Enrollment is currently active |
-| PENDING | Enrollment is pending approval/activation |
-| SUSPENDED | Enrollment is temporarily suspended |
-| TERMINATED | Enrollment has been terminated |
 
 ## Files
 

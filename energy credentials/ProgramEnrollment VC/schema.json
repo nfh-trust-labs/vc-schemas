@@ -106,12 +106,6 @@
                     "format": "date",
                     "description": "Date when the consumer enrolled in the program"
                 },
-                "enrollmentStatus": {
-                    "type": "string",
-                    "enum": ["ACTIVE", "PENDING", "SUSPENDED", "TERMINATED"],
-                    "default": "ACTIVE",
-                    "description": "Current status of the enrollment"
-                },
                 "validFrom": {
                     "type": "string",
                     "format": "date",

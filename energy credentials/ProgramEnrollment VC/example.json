@@ -16,8 +16,7 @@
     "consumerNumber": "BRPL-2025-001234567",
     "programName": "Peer-to-Peer Energy Trading",
     "programCode": "P2P-2025",
-    "enrollmentDate": "2025-01-13",
-    "enrollmentStatus": "ACTIVE"
+    "enrollmentDate": "2025-01-13"
   },
   "proof": {
     "type": "Ed25519Signature2020",

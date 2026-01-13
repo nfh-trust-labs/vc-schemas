@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1",
+    "https://schema.example.org/discom/v1/context.jsonld"
+  ],
+  "id": "urn:uuid:3a5b8c9d-1234-5678-abcd-ef9012345678",
+  "type": ["VerifiableCredential", "DiscomConsumerCredential"],
+  "issuer": {
+    "id": "did:web:bsesdelhi.com",
+    "name": "BSES Rajdhani Power Limited",
+    "licenseNumber": "DERC/2004/LICENSE/01"
+  },
+  "issuanceDate": "2025-01-13T10:30:00Z",
+  "credentialStatus": {
+    "id": "https://bsesdelhi.com/credentials/status/3a5b8c9d-1234-5678-abcd-ef9012345678",
+    "type": "StatusList2021Entry",
+    "statusPurpose": "revocation",
+    "statusListIndex": "12345",
+    "statusListCredential": "https://bsesdelhi.com/credentials/status-list/2025"
+  },
+  "credentialSubject": {
+    "id": "did:example:consumer:abc123",
+    "consumerNumber": "BRPL-2025-001234567",
+    "fullName": "Rajesh Kumar Sharma",
+    "installationAddress": {
+      "fullAddress": "B-42, Sector 15, Dwarka",
+      "district": "South West Delhi",
+      "pincode": "110078",
+      "state": "Delhi"
+    },
+    "premisesType": "Residential",
+    "connectionType": "Single-phase",
+    "sanctionedLoadKW": 5,
+    "tariffCategoryCode": "DOM-01",
+    "meterNumber": "MET2025789456123",
+    "serviceConnectionDate": "2025-01-10",
+    "maskedAadhaar": "XXXX-XXXX-4567"
+  },
+  "proof": {
+    "type": "Ed25519Signature2020",
+    "created": "2025-01-13T10:30:00Z",
+    "verificationMethod": "did:web:bsesdelhi.com#key-1",
+    "proofPurpose": "assertionMethod",
+    "proofValue": "z58DAdFfa9SkqZMVPxAQpic7ndTaXoT..."
+  }
+}

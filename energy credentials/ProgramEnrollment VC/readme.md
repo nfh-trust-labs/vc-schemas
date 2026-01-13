@@ -5,12 +5,10 @@ This credential is issued by electricity distribution companies (DISCOMs) when a
 ## Use Cases
 
 - **P2P Energy Trading**: Consumer is authorized to trade excess solar energy with neighbors
-- **Demand Flexibility**: Consumer agrees to reduce consumption during peak hours for incentives
+- **Demand Flexibility**: Consumer agrees to actively reduce consumption during peak hours for incentives
 - **Virtual Power Plant**: Consumer's DER assets are aggregated for grid services
 - **Time of Use**: Consumer opts into time-based pricing programs
 - **Net Metering**: Consumer is enrolled in net metering for solar exports
-- **Green Energy**: Consumer subscribes to renewable energy programs
-- **EV Charging**: Consumer participates in managed EV charging programs
 
 ## Fields
 

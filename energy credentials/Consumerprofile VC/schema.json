@@ -161,16 +161,6 @@
                     "format": "date",
                     "description": "Date when the connection was activated"
                 },
-                "maskedAadhaar": {
-                    "type": "string",
-                    "pattern": "^X{4}-X{4}-[0-9]{4}$",
-                    "description": "Optional masked Aadhaar number showing only last 4 digits (e.g., XXXX-XXXX-4567)"
-                },
-                "pan": {
-                    "type": "string",
-                    "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]$",
-                    "description": "Optional PAN number (typically for commercial/industrial consumers)"
-                },
                 "derSolar": {
                     "type": "object",
                     "description": "Distributed Energy Resource - Solar installation details. If present, indicates the consumer is a prosumer with solar generation capability.",

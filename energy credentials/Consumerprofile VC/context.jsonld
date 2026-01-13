@@ -69,14 +69,6 @@
                     "@id": "discom:serviceConnectionDate",
                     "@type": "xsd:date"
                 },
-                "maskedAadhaar": {
-                    "@id": "discom:maskedAadhaar",
-                    "@type": "xsd:string"
-                },
-                "pan": {
-                    "@id": "discom:pan",
-                    "@type": "xsd:string"
-                },
                 "derSolar": {
                     "@id": "discom:derSolar",
                     "@type": "@id",

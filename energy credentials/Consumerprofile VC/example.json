@@ -27,7 +27,6 @@
     "tariffCategoryCode": "DOM-01",
     "meterNumber": "MET2025789456123",
     "serviceConnectionDate": "2025-01-10",
-    "maskedAadhaar": "XXXX-XXXX-4567",
     "derSolar": {
       "capacityKWp": 3,
       "commissioningDate": "2025-01-12"

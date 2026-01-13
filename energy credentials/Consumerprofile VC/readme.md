@@ -22,8 +22,6 @@ The example shows a prosumer with both solar and battery installations.
 | tariffCategoryCode | Billing category code (e.g., DOM-01) | Yes |
 | meterNumber | Meter serial number | Yes |
 | serviceConnectionDate | Connection activation date | Yes |
-| maskedAadhaar | Masked Aadhaar (XXXX-XXXX-1234) | No |
-| pan | PAN number (for commercial/industrial) | No |
 
 ## DER Fields (Optional)
 

@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://nfh-trust-labs.github.io/vc-schemas/energy%20credentials/ProgramEnrollment%20VC/schema.json",
+    "$id": "https://nfh-trust-labs.github.io/vc-schemas/energy-credentials/program-enrollment-vc/schema.json",
     "title": "Discom Program Enrollment Credential Schema",
     "description": "JSON Schema for verifying Program Enrollment Credentials issued by electricity distribution companies when consumers enroll in programs like P2P trading, demand flexibility, virtual power plants, etc.",
     "type": "object",

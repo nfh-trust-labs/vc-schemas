@@ -1,7 +1,7 @@
 {
   "@context": [
     "https://www.w3.org/2018/credentials/v1",
-    "https://nfh-trust-labs.github.io/vc-schemas/energy%20credentials/ProgramEnrollment%20VC/context.jsonld"
+    "https://nfh-trust-labs.github.io/vc-schemas/energy-credentials/program-enrollment-vc/context.jsonld"
   ],
   "id": "urn:uuid:7f8e9d0c-5678-1234-abcd-123456789abc",
   "type": ["VerifiableCredential", "DiscomProgramEnrollmentCredential"],

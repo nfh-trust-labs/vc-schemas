@@ -54,10 +54,10 @@ Present if the consumer has battery storage (makes them a prosumer).
 
 Context URL:
 ```
-https://nfh-trust-labs.github.io/vc-schemas/energy%20credentials/Consumerprofile%20VC/context.jsonld
+https://nfh-trust-labs.github.io/vc-schemas/energy-credentials/consumer-profile-vc/context.jsonld
 ```
 
 Schema URL:
 ```
-https://nfh-trust-labs.github.io/vc-schemas/energy%20credentials/Consumerprofile%20VC/schema.json
+https://nfh-trust-labs.github.io/vc-schemas/energy-credentials/consumer-profile-vc/schema.json
 ```

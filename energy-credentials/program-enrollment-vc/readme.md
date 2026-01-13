@@ -30,10 +30,10 @@ This credential is issued by electricity distribution companies (DISCOMs) when a
 
 Context URL:
 ```
-https://nfh-trust-labs.github.io/vc-schemas/energy%20credentials/ProgramEnrollment%20VC/context.jsonld
+https://nfh-trust-labs.github.io/vc-schemas/energy-credentials/program-enrollment-vc/context.jsonld
 ```
 
 Schema URL:
 ```
-https://nfh-trust-labs.github.io/vc-schemas/energy%20credentials/ProgramEnrollment%20VC/schema.json
+https://nfh-trust-labs.github.io/vc-schemas/energy-credentials/program-enrollment-vc/schema.json
 ```

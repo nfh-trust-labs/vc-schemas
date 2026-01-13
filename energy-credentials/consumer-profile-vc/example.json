@@ -1,7 +1,7 @@
 {
   "@context": [
     "https://www.w3.org/2018/credentials/v1",
-    "https://nfh-trust-labs.github.io/vc-schemas/energy%20credentials/Consumerprofile%20VC/context.jsonld"
+    "https://nfh-trust-labs.github.io/vc-schemas/energy-credentials/consumer-profile-vc/context.jsonld"
   ],
   "id": "urn:uuid:3a5b8c9d-1234-5678-abcd-ef9012345678",
   "type": ["VerifiableCredential", "DiscomConsumerCredential"],

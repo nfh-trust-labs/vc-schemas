@@ -6,7 +6,7 @@
         "type": "@type",
         "schema": "https://schema.org/",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
-        "discom": "https://nfh-trust-labs.github.io/vc-schemas/energy%20credentials/ProgramEnrollment%20VC/context.jsonld#",
+        "discom": "https://nfh-trust-labs.github.io/vc-schemas/energy-credentials/program-enrollment-vc/context.jsonld#",
 
         "DiscomProgramEnrollmentCredential": {
             "@id": "discom:DiscomProgramEnrollmentCredential",

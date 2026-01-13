@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://nfh-trust-labs.github.io/vc-schemas/energy%20credentials/Consumerprofile%20VC/schema.json",
+    "$id": "https://nfh-trust-labs.github.io/vc-schemas/energy-credentials/consumer-profile-vc/schema.json",
     "title": "Discom Consumer Credential Schema",
     "description": "JSON Schema for verifying Consumer/Prosumer Credentials issued by electricity distribution companies in India. A pure consumer has no DER blocks, while a prosumer has at least one (derSolar or derBattery).",
     "type": "object",

@@ -1,8 +1,8 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://nfh-trust-labs.github.io/vc-schemas/energy%20credentials/Consumerprofile%20VC/schema.json",
-    "title": "Consumer Profile Onboarding Credential Schema",
-    "description": "JSON Schema for verifying Consumer Profile Onboarding Credentials issued by electricity distribution companies in India",
+    "title": "Discom Consumer Credential Schema",
+    "description": "JSON Schema for verifying Consumer/Prosumer Credentials issued by electricity distribution companies in India. A pure consumer has no DER blocks, while a prosumer has at least one (derSolar or derBattery).",
     "type": "object",
     "required": [
         "@context",
@@ -35,7 +35,7 @@
                 "type": "string"
             },
             "contains": {
-                "const": "ConsumerProfileOnboardingCredential"
+                "const": "DiscomConsumerCredential"
             },
             "minItems": 2
         },
@@ -99,7 +99,7 @@
                     "type": "string",
                     "minLength": 1,
                     "maxLength": 200,
-                    "description": "Full name of the consumer as registered"
+                    "description": "Full name of the consumer as per ID proof"
                 },
                 "installationAddress": {
                     "type": "object",
@@ -130,7 +130,7 @@
                 },
                 "premisesType": {
                     "type": "string",
-                    "enum": ["Residential", "Commercial", "Industrial", "Agricultural", "Institutional", "Government"],
+                    "enum": ["Residential", "Commercial", "Industrial", "Agricultural"],
                     "description": "Type of premises for the electricity connection"
                 },
                 "connectionType": {
@@ -142,12 +142,12 @@
                     "type": "number",
                     "minimum": 0.5,
                     "maximum": 10000,
-                    "description": "Sanctioned electrical load in kilowatts (kW)"
+                    "description": "Sanctioned/approved electrical load in kilowatts (kW)"
                 },
                 "tariffCategoryCode": {
                     "type": "string",
                     "pattern": "^[A-Z]+-[0-9]+$",
-                    "description": "Tariff category code (e.g., DOM-01 for Domestic)"
+                    "description": "Billing/tariff category code (e.g., DOM-01 for Domestic)"
                 },
                 "meterNumber": {
                     "type": "string",
@@ -159,12 +159,59 @@
                 "serviceConnectionDate": {
                     "type": "string",
                     "format": "date",
-                    "description": "Date when the service connection was established"
+                    "description": "Date when the connection was activated"
                 },
                 "maskedAadhaar": {
                     "type": "string",
                     "pattern": "^X{4}-X{4}-[0-9]{4}$",
-                    "description": "Masked Aadhaar number showing only last 4 digits (e.g., XXXX-XXXX-4567)"
+                    "description": "Optional masked Aadhaar number showing only last 4 digits (e.g., XXXX-XXXX-4567)"
+                },
+                "pan": {
+                    "type": "string",
+                    "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]$",
+                    "description": "Optional PAN number (typically for commercial/industrial consumers)"
+                },
+                "derSolar": {
+                    "type": "object",
+                    "description": "Distributed Energy Resource - Solar installation details. If present, indicates the consumer is a prosumer with solar generation capability.",
+                    "required": ["capacityKWp", "commissioningDate"],
+                    "properties": {
+                        "capacityKWp": {
+                            "type": "number",
+                            "minimum": 0.1,
+                            "maximum": 10000,
+                            "description": "Installed solar generation capacity in kilowatts peak (kWp)"
+                        },
+                        "commissioningDate": {
+                            "type": "string",
+                            "format": "date",
+                            "description": "Date when solar installation was activated"
+                        }
+                    }
+                },
+                "derBattery": {
+                    "type": "object",
+                    "description": "Distributed Energy Resource - Battery storage details. If present, indicates the consumer is a prosumer with battery storage capability.",
+                    "required": ["storageCapacityKWh", "powerRatingKW", "commissioningDate"],
+                    "properties": {
+                        "storageCapacityKWh": {
+                            "type": "number",
+                            "minimum": 0.1,
+                            "maximum": 10000,
+                            "description": "Battery storage capacity in kilowatt-hours (kWh)"
+                        },
+                        "powerRatingKW": {
+                            "type": "number",
+                            "minimum": 0.1,
+                            "maximum": 10000,
+                            "description": "Battery charge/discharge power rating in kilowatts (kW)"
+                        },
+                        "commissioningDate": {
+                            "type": "string",
+                            "format": "date",
+                            "description": "Date when battery storage was activated"
+                        }
+                    }
                 }
             }
         },
@@ -174,7 +221,7 @@
             "properties": {
                 "type": {
                     "type": "string",
-                    "description": "Cryptographic signature type"
+                    "description": "Cryptographic signature type (e.g., Ed25519Signature2020)"
                 },
                 "created": {
                     "type": "string",

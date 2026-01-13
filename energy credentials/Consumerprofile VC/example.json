@@ -1,7 +1,7 @@
 {
   "@context": [
     "https://www.w3.org/2018/credentials/v1",
-    "https://schema.example.org/discom/v1/context.jsonld"
+    "https://nfh-trust-labs.github.io/vc-schemas/energy%20credentials/Consumerprofile%20VC/context.jsonld"
   ],
   "id": "urn:uuid:3a5b8c9d-1234-5678-abcd-ef9012345678",
   "type": ["VerifiableCredential", "DiscomConsumerCredential"],
@@ -11,13 +11,6 @@
     "licenseNumber": "DERC/2004/LICENSE/01"
   },
   "issuanceDate": "2025-01-13T10:30:00Z",
-  "credentialStatus": {
-    "id": "https://bsesdelhi.com/credentials/status/3a5b8c9d-1234-5678-abcd-ef9012345678",
-    "type": "StatusList2021Entry",
-    "statusPurpose": "revocation",
-    "statusListIndex": "12345",
-    "statusListCredential": "https://bsesdelhi.com/credentials/status-list/2025"
-  },
   "credentialSubject": {
     "id": "did:example:consumer:abc123",
     "consumerNumber": "BRPL-2025-001234567",
@@ -34,7 +27,16 @@
     "tariffCategoryCode": "DOM-01",
     "meterNumber": "MET2025789456123",
     "serviceConnectionDate": "2025-01-10",
-    "maskedAadhaar": "XXXX-XXXX-4567"
+    "maskedAadhaar": "XXXX-XXXX-4567",
+    "derSolar": {
+      "capacityKWp": 3,
+      "commissioningDate": "2025-01-12"
+    },
+    "derBattery": {
+      "storageCapacityKWh": 10,
+      "powerRatingKW": 5,
+      "commissioningDate": "2025-01-12"
+    }
   },
   "proof": {
     "type": "Ed25519Signature2020",

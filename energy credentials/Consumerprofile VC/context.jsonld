@@ -8,8 +8,8 @@
         "xsd": "http://www.w3.org/2001/XMLSchema#",
         "discom": "https://nfh-trust-labs.github.io/vc-schemas/energy%20credentials/Consumerprofile%20VC/context.jsonld#",
 
-        "ConsumerProfileOnboardingCredential": {
-            "@id": "discom:ConsumerProfileOnboardingCredential",
+        "DiscomConsumerCredential": {
+            "@id": "discom:DiscomConsumerCredential",
             "@context": {
                 "@version": 1.1,
                 "@protected": true,
@@ -72,6 +72,42 @@
                 "maskedAadhaar": {
                     "@id": "discom:maskedAadhaar",
                     "@type": "xsd:string"
+                },
+                "pan": {
+                    "@id": "discom:pan",
+                    "@type": "xsd:string"
+                },
+                "derSolar": {
+                    "@id": "discom:derSolar",
+                    "@type": "@id",
+                    "@context": {
+                        "capacityKWp": {
+                            "@id": "discom:capacityKWp",
+                            "@type": "xsd:decimal"
+                        },
+                        "commissioningDate": {
+                            "@id": "discom:commissioningDate",
+                            "@type": "xsd:date"
+                        }
+                    }
+                },
+                "derBattery": {
+                    "@id": "discom:derBattery",
+                    "@type": "@id",
+                    "@context": {
+                        "storageCapacityKWh": {
+                            "@id": "discom:storageCapacityKWh",
+                            "@type": "xsd:decimal"
+                        },
+                        "powerRatingKW": {
+                            "@id": "discom:powerRatingKW",
+                            "@type": "xsd:decimal"
+                        },
+                        "commissioningDate": {
+                            "@id": "discom:commissioningDate",
+                            "@type": "xsd:date"
+                        }
+                    }
                 }
             }
         },

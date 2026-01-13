@@ -4,27 +4,29 @@
     "https://nfh-trust-labs.github.io/vc-schemas/energy-credentials/consumer-profile-vc/context.jsonld"
   ],
   "id": "urn:uuid:3a5b8c9d-1234-5678-abcd-ef9012345678",
-  "type": ["VerifiableCredential", "DiscomConsumerCredential"],
+  "type": ["VerifiableCredential", "UtilityConsumerCredential"],
   "issuer": {
-    "id": "did:web:bsesdelhi.com",
-    "name": "BSES Rajdhani Power Limited",
-    "licenseNumber": "DERC/2004/LICENSE/01"
+    "id": "did:web:example-utility.com",
+    "name": "Example Energy Utility",
+    "licenseNumber": "REG-2025-00001"
   },
   "issuanceDate": "2025-01-13T10:30:00Z",
   "credentialSubject": {
     "id": "did:example:consumer:abc123",
-    "consumerNumber": "BRPL-2025-001234567",
-    "fullName": "Rajesh Kumar Sharma",
+    "consumerNumber": "UTIL-2025-001234567",
+    "fullName": "Jane Doe",
     "installationAddress": {
-      "fullAddress": "B-42, Sector 15, Dwarka",
-      "district": "South West Delhi",
-      "pincode": "110078",
-      "state": "Delhi"
+      "fullAddress": "123 Energy Street, Unit 4",
+      "city": "Metro City",
+      "district": "Metro District",
+      "stateProvince": "Example State",
+      "postalCode": "12345",
+      "country": "US"
     },
     "premisesType": "Residential",
     "connectionType": "Single-phase",
     "sanctionedLoadKW": 5,
-    "tariffCategoryCode": "DOM-01",
+    "tariffCategoryCode": "RES-01",
     "meterNumber": "MET2025789456123",
     "serviceConnectionDate": "2025-01-10",
     "derSolar": {
@@ -40,7 +42,7 @@
   "proof": {
     "type": "Ed25519Signature2020",
     "created": "2025-01-13T10:30:00Z",
-    "verificationMethod": "did:web:bsesdelhi.com#key-1",
+    "verificationMethod": "did:web:example-utility.com#key-1",
     "proofPurpose": "assertionMethod",
     "proofValue": "z58DAdFfa9SkqZMVPxAQpic7ndTaXoT..."
   }

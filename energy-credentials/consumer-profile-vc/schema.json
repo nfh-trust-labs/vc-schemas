@@ -1,8 +1,8 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://nfh-trust-labs.github.io/vc-schemas/energy-credentials/consumer-profile-vc/schema.json",
-    "title": "Discom Consumer Credential Schema",
-    "description": "JSON Schema for verifying Consumer/Prosumer Credentials issued by electricity distribution companies in India. A pure consumer has no DER blocks, while a prosumer has at least one (derSolar or derBattery).",
+    "title": "Utility Consumer Credential Schema",
+    "description": "JSON Schema for verifying Consumer/Prosumer Credentials issued by electricity distribution utilities. A pure consumer has no DER blocks, while a prosumer has at least one (derSolar or derBattery).",
     "type": "object",
     "required": [
         "@context",
@@ -35,7 +35,7 @@
                 "type": "string"
             },
             "contains": {
-                "const": "DiscomConsumerCredential"
+                "const": "UtilityConsumerCredential"
             },
             "minItems": 2
         },
@@ -46,17 +46,17 @@
                 "id": {
                     "type": "string",
                     "format": "uri",
-                    "description": "DID of the issuing distribution company"
+                    "description": "DID of the issuing distribution utility"
                 },
                 "name": {
                     "type": "string",
                     "minLength": 1,
-                    "description": "Name of the distribution company"
+                    "description": "Name of the distribution utility"
                 },
                 "licenseNumber": {
                     "type": "string",
-                    "pattern": "^[A-Z]+/[0-9]{4}/[A-Z]+/[0-9]+$",
-                    "description": "License number issued by the regulatory commission (e.g., DERC/2004/LICENSE/01)"
+                    "minLength": 1,
+                    "description": "Regulatory license number issued by the local energy regulator"
                 }
             }
         },
@@ -92,8 +92,8 @@
                 },
                 "consumerNumber": {
                     "type": "string",
-                    "pattern": "^[A-Z]+-[0-9]{4}-[0-9]+$",
-                    "description": "Unique consumer account number (e.g., BRPL-2025-001234567)"
+                    "minLength": 1,
+                    "description": "Unique consumer/customer account number assigned by the utility"
                 },
                 "fullName": {
                     "type": "string",
@@ -103,7 +103,7 @@
                 },
                 "installationAddress": {
                     "type": "object",
-                    "required": ["fullAddress", "district", "pincode", "state"],
+                    "required": ["fullAddress", "postalCode", "country"],
                     "properties": {
                         "fullAddress": {
                             "type": "string",
@@ -111,20 +111,30 @@
                             "maxLength": 500,
                             "description": "Complete street address of the installation"
                         },
+                        "city": {
+                            "type": "string",
+                            "minLength": 1,
+                            "description": "City name"
+                        },
                         "district": {
                             "type": "string",
                             "minLength": 1,
-                            "description": "District name"
+                            "description": "District or county name"
                         },
-                        "pincode": {
-                            "type": "string",
-                            "pattern": "^[1-9][0-9]{5}$",
-                            "description": "6-digit Indian postal PIN code"
-                        },
-                        "state": {
+                        "stateProvince": {
                             "type": "string",
                             "minLength": 1,
-                            "description": "State or Union Territory name"
+                            "description": "State, province, or region name"
+                        },
+                        "postalCode": {
+                            "type": "string",
+                            "minLength": 1,
+                            "description": "Postal or ZIP code (format varies by country)"
+                        },
+                        "country": {
+                            "type": "string",
+                            "pattern": "^[A-Z]{2}$",
+                            "description": "ISO 3166-1 alpha-2 country code"
                         }
                     }
                 },
@@ -146,14 +156,13 @@
                 },
                 "tariffCategoryCode": {
                     "type": "string",
-                    "pattern": "^[A-Z]+-[0-9]+$",
-                    "description": "Billing/tariff category code (e.g., DOM-01 for Domestic)"
+                    "minLength": 1,
+                    "description": "Billing/tariff category code assigned by the utility"
                 },
                 "meterNumber": {
                     "type": "string",
-                    "pattern": "^[A-Z0-9]+$",
-                    "minLength": 10,
-                    "maxLength": 20,
+                    "minLength": 1,
+                    "maxLength": 50,
                     "description": "Unique meter serial number"
                 },
                 "serviceConnectionDate": {

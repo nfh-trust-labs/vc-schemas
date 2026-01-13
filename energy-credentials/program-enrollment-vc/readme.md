@@ -1,11 +1,11 @@
-# Discom Program Enrollment Credential
+# Utility Program Enrollment Credential
 
-This credential is issued by electricity distribution companies (DISCOMs) when a consumer enrolls in an energy program. Programs can include peer-to-peer trading, demand flexibility, virtual power plants, and other grid services.
+This credential is issued by electricity distribution utilities when a consumer enrolls in an energy program. Programs can include peer-to-peer trading, demand flexibility, virtual power plants, and other grid services.
 
 ## Use Cases
 
 - **P2P Energy Trading**: Consumer is authorized to trade excess solar energy with neighbors
-- **Demand Flexibility**: Consumer agrees to actively reduce consumption during peak hours for incentives
+- **Demand Flexibility**: Consumer agrees to reduce consumption during peak hours for incentives
 - **Virtual Power Plant**: Consumer's DER assets are aggregated for grid services
 - **Time of Use**: Consumer opts into time-based pricing programs
 - **Net Metering**: Consumer is enrolled in net metering for solar exports
@@ -16,7 +16,7 @@ This credential is issued by electricity distribution companies (DISCOMs) when a
 | :---- | :---- | :----: |
 | consumerNumber | Unique consumer account number | Yes |
 | programName | Human-readable program name | Yes |
-| programCode | Unique program identifier (e.g., P2P-2025) | Yes |
+| programCode | Unique program identifier | Yes |
 | enrollmentDate | Date of enrollment | Yes |
 | validUntil | End date when enrollment expires | No |
 

@@ -6,17 +6,17 @@
         "type": "@type",
         "schema": "https://schema.org/",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
-        "discom": "https://nfh-trust-labs.github.io/vc-schemas/energy-credentials/consumer-profile-vc/context.jsonld#",
+        "utility": "https://nfh-trust-labs.github.io/vc-schemas/energy-credentials/consumer-profile-vc/context.jsonld#",
 
-        "DiscomConsumerCredential": {
-            "@id": "discom:DiscomConsumerCredential",
+        "UtilityConsumerCredential": {
+            "@id": "utility:UtilityConsumerCredential",
             "@context": {
                 "@version": 1.1,
                 "@protected": true,
                 "id": "@id",
                 "type": "@type",
                 "consumerNumber": {
-                    "@id": "discom:consumerNumber",
+                    "@id": "utility:consumerNumber",
                     "@type": "xsd:string"
                 },
                 "fullName": {
@@ -24,79 +24,87 @@
                     "@type": "xsd:string"
                 },
                 "installationAddress": {
-                    "@id": "discom:installationAddress",
+                    "@id": "utility:installationAddress",
                     "@type": "@id",
                     "@context": {
                         "fullAddress": {
                             "@id": "schema:streetAddress",
                             "@type": "xsd:string"
                         },
-                        "district": {
-                            "@id": "discom:district",
+                        "city": {
+                            "@id": "schema:addressLocality",
                             "@type": "xsd:string"
                         },
-                        "pincode": {
+                        "district": {
+                            "@id": "utility:district",
+                            "@type": "xsd:string"
+                        },
+                        "stateProvince": {
+                            "@id": "schema:addressRegion",
+                            "@type": "xsd:string"
+                        },
+                        "postalCode": {
                             "@id": "schema:postalCode",
                             "@type": "xsd:string"
                         },
-                        "state": {
-                            "@id": "schema:addressRegion",
+                        "country": {
+                            "@id": "schema:addressCountry",
                             "@type": "xsd:string"
                         }
                     }
                 },
                 "premisesType": {
-                    "@id": "discom:premisesType",
+                    "@id": "utility:premisesType",
                     "@type": "xsd:string"
                 },
                 "connectionType": {
-                    "@id": "discom:connectionType",
+                    "@id": "utility:connectionType",
                     "@type": "xsd:string"
                 },
                 "sanctionedLoadKW": {
-                    "@id": "discom:sanctionedLoadKW",
+                    "@id": "utility:sanctionedLoadKW",
                     "@type": "xsd:decimal"
                 },
                 "tariffCategoryCode": {
-                    "@id": "discom:tariffCategoryCode",
+                    "@id": "utility:tariffCategoryCode",
                     "@type": "xsd:string"
                 },
                 "meterNumber": {
-                    "@id": "discom:meterNumber",
+                    "@id": "utility:meterNumber",
                     "@type": "xsd:string"
                 },
                 "serviceConnectionDate": {
-                    "@id": "discom:serviceConnectionDate",
+                    "@id": "utility:serviceConnectionDate",
                     "@type": "xsd:date"
                 },
                 "derSolar": {
-                    "@id": "discom:derSolar",
+                    "@id": "utility:derSolar",
                     "@type": "@id",
                     "@context": {
                         "capacityKWp": {
-                            "@id": "discom:capacityKWp",
+                            "@id": "utility:capacityKWp",
                             "@type": "xsd:decimal"
                         },
                         "commissioningDate": {
-                            "@id": "discom:commissioningDate",
+                            "@id": "utility:commissioningDate",
                             "@type": "xsd:date"
                         }
                     }
                 },
                 "derBattery": {
-                    "@id": "discom:derBattery",
+                    "@id": "utility:derBattery",
                     "@type": "@id",
                     "@context": {
                         "storageCapacityKWh": {
-                            "@id": "discom:storageCapacityKWh",
+                            "@id": "utility:storageCapacityKWh",
                             "@type": "xsd:decimal"
                         },
                         "powerRatingKW": {
-                            "@id": "discom:powerRatingKW",
+                            "@id": "utility:powerRatingKW",
                             "@type": "xsd:decimal"
                         },
                         "commissioningDate": {
-                            "@id": "discom:commissioningDate",
+                            "@id": "utility:commissioningDate",
                             "@type": "xsd:date"
                         }
                     }
@@ -104,8 +112,8 @@
             }
         },
 
-        "DiscomIssuer": {
-            "@id": "discom:DiscomIssuer",
+        "UtilityIssuer": {
+            "@id": "utility:UtilityIssuer",
             "@context": {
                 "@version": 1.1,
                 "@protected": true,
@@ -116,7 +124,7 @@
                     "@type": "xsd:string"
                 },
                 "licenseNumber": {
-                    "@id": "discom:licenseNumber",
+                    "@id": "utility:licenseNumber",
                     "@type": "xsd:string"
                 }
             }

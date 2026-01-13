@@ -1,6 +1,6 @@
-# Discom Consumer/Prosumer Credential
+# Utility Consumer/Prosumer Credential
 
-This credential represents a consumer profile issued by electricity distribution companies (DISCOMs) in India. It supports both pure consumers and prosumers (consumers with distributed energy resources).
+This credential represents a consumer profile issued by electricity distribution utilities. It supports both pure consumers and prosumers (consumers with distributed energy resources).
 
 ## Consumer vs Prosumer
 
@@ -15,13 +15,24 @@ The example shows a prosumer with both solar and battery installations.
 | :---- | :---- | :----: |
 | consumerNumber | Unique consumer account number | Yes |
 | fullName | Full name as per ID proof | Yes |
-| installationAddress | Full address, district, pincode, state | Yes |
+| installationAddress | Full address, city, district, stateProvince, postalCode, country | Yes |
 | premisesType | Residential / Commercial / Industrial / Agricultural | Yes |
 | connectionType | Single-phase / Three-phase | Yes |
 | sanctionedLoadKW | Approved electrical load in kW | Yes |
-| tariffCategoryCode | Billing category code (e.g., DOM-01) | Yes |
+| tariffCategoryCode | Billing category code | Yes |
 | meterNumber | Meter serial number | Yes |
 | serviceConnectionDate | Connection activation date | Yes |
+
+## Address Fields
+
+| Field | Description | Required |
+| :---- | :---- | :----: |
+| fullAddress | Complete street address | Yes |
+| city | City name | No |
+| district | District or county name | No |
+| stateProvince | State, province, or region | No |
+| postalCode | Postal or ZIP code | Yes |
+| country | ISO 3166-1 alpha-2 country code | Yes |
 
 ## DER Fields (Optional)
 

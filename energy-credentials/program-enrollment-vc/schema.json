@@ -1,8 +1,8 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://nfh-trust-labs.github.io/vc-schemas/energy-credentials/program-enrollment-vc/schema.json",
-    "title": "Discom Program Enrollment Credential Schema",
-    "description": "JSON Schema for verifying Program Enrollment Credentials issued by electricity distribution companies when consumers enroll in programs like P2P trading, demand flexibility, virtual power plants, etc.",
+    "title": "Utility Program Enrollment Credential Schema",
+    "description": "JSON Schema for verifying Program Enrollment Credentials issued by electricity distribution utilities when consumers enroll in programs like P2P trading, demand flexibility, virtual power plants, etc.",
     "type": "object",
     "required": [
         "@context",
@@ -35,7 +35,7 @@
                 "type": "string"
             },
             "contains": {
-                "const": "DiscomProgramEnrollmentCredential"
+                "const": "UtilityProgramEnrollmentCredential"
             },
             "minItems": 2
         },
@@ -46,17 +46,17 @@
                 "id": {
                     "type": "string",
                     "format": "uri",
-                    "description": "DID of the issuing distribution company"
+                    "description": "DID of the issuing distribution utility"
                 },
                 "name": {
                     "type": "string",
                     "minLength": 1,
-                    "description": "Name of the distribution company"
+                    "description": "Name of the distribution utility"
                 },
                 "licenseNumber": {
                     "type": "string",
-                    "pattern": "^[A-Z]+/[0-9]{4}/[A-Z]+/[0-9]+$",
-                    "description": "License number issued by the regulatory commission (e.g., DERC/2004/LICENSE/01)"
+                    "minLength": 1,
+                    "description": "Regulatory license number issued by the local energy regulator"
                 }
             }
         },
@@ -87,8 +87,8 @@
                 },
                 "consumerNumber": {
                     "type": "string",
-                    "pattern": "^[A-Z]+-[0-9]{4}-[0-9]+$",
-                    "description": "Unique consumer account number (e.g., BRPL-2025-001234567)"
+                    "minLength": 1,
+                    "description": "Unique consumer/customer account number assigned by the utility"
                 },
                 "programName": {
                     "type": "string",
@@ -98,8 +98,8 @@
                 },
                 "programCode": {
                     "type": "string",
-                    "pattern": "^[A-Z0-9]+-[0-9]{4}$",
-                    "description": "Unique program identifier code (e.g., P2P-2025, DFP-2025)"
+                    "minLength": 1,
+                    "description": "Unique program identifier code"
                 },
                 "enrollmentDate": {
                     "type": "string",

@@ -19,24 +19,10 @@ This credential is issued by electricity distribution companies (DISCOMs) when a
 | consumerNumber | Unique consumer account number | Yes |
 | programName | Human-readable program name | Yes |
 | programCode | Unique program identifier (e.g., P2P-2025) | Yes |
-| programType | Category of program (P2P_TRADING, DEMAND_FLEXIBILITY, etc.) | No |
 | enrollmentDate | Date of enrollment | Yes |
 | enrollmentStatus | ACTIVE / PENDING / SUSPENDED / TERMINATED | No |
 | validFrom | Start date when enrollment becomes effective | No |
 | validUntil | End date when enrollment expires | No |
-
-## Program Types
-
-| Code | Description |
-| :---- | :---- |
-| P2P_TRADING | Peer-to-peer energy trading |
-| DEMAND_FLEXIBILITY | Demand response / flexibility programs |
-| VIRTUAL_POWER_PLANT | VPP aggregation for grid services |
-| TIME_OF_USE | Time-based pricing programs |
-| NET_METERING | Solar net metering programs |
-| GREEN_ENERGY | Renewable energy subscription |
-| EV_CHARGING | Managed EV charging programs |
-| OTHER | Other program types |
 
 ## Enrollment Status
 

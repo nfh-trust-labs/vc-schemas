@@ -27,10 +27,6 @@
                     "@id": "discom:programCode",
                     "@type": "xsd:string"
                 },
-                "programType": {
-                    "@id": "discom:programType",
-                    "@type": "xsd:string"
-                },
                 "enrollmentDate": {
                     "@id": "discom:enrollmentDate",
                     "@type": "xsd:date"

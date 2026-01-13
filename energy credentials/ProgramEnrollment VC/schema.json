@@ -101,20 +101,6 @@
                     "pattern": "^[A-Z0-9]+-[0-9]{4}$",
                     "description": "Unique program identifier code (e.g., P2P-2025, DFP-2025)"
                 },
-                "programType": {
-                    "type": "string",
-                    "enum": [
-                        "P2P_TRADING",
-                        "DEMAND_FLEXIBILITY",
-                        "VIRTUAL_POWER_PLANT",
-                        "TIME_OF_USE",
-                        "NET_METERING",
-                        "GREEN_ENERGY",
-                        "EV_CHARGING",
-                        "OTHER"
-                    ],
-                    "description": "Category of the energy program"
-                },
                 "enrollmentDate": {
                     "type": "string",
                     "format": "date",

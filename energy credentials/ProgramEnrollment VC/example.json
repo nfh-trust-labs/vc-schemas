@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1",
+    "https://nfh-trust-labs.github.io/vc-schemas/energy%20credentials/ProgramEnrollment%20VC/context.jsonld"
+  ],
+  "id": "urn:uuid:7f8e9d0c-5678-1234-abcd-123456789abc",
+  "type": ["VerifiableCredential", "DiscomProgramEnrollmentCredential"],
+  "issuer": {
+    "id": "did:web:bsesdelhi.com",
+    "name": "BSES Rajdhani Power Limited",
+    "licenseNumber": "DERC/2004/LICENSE/01"
+  },
+  "issuanceDate": "2025-01-13T11:00:00Z",
+  "credentialSubject": {
+    "id": "did:example:consumer:abc123",
+    "consumerNumber": "BRPL-2025-001234567",
+    "programName": "Peer-to-Peer Energy Trading",
+    "programCode": "P2P-2025",
+    "programType": "P2P_TRADING",
+    "enrollmentDate": "2025-01-13",
+    "enrollmentStatus": "ACTIVE"
+  },
+  "proof": {
+    "type": "Ed25519Signature2020",
+    "created": "2025-01-13T11:00:00Z",
+    "verificationMethod": "did:web:bsesdelhi.com#key-1",
+    "proofPurpose": "assertionMethod",
+    "proofValue": "z3FXQehWgc9VfTh8WpLmkJd2rNn..."
+  }
+}

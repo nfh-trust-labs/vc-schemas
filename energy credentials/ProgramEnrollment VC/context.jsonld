@@ -1,0 +1,71 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "@protected": true,
+        "id": "@id",
+        "type": "@type",
+        "schema": "https://schema.org/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "discom": "https://nfh-trust-labs.github.io/vc-schemas/energy%20credentials/ProgramEnrollment%20VC/context.jsonld#",
+
+        "DiscomProgramEnrollmentCredential": {
+            "@id": "discom:DiscomProgramEnrollmentCredential",
+            "@context": {
+                "@version": 1.1,
+                "@protected": true,
+                "id": "@id",
+                "type": "@type",
+                "consumerNumber": {
+                    "@id": "discom:consumerNumber",
+                    "@type": "xsd:string"
+                },
+                "programName": {
+                    "@id": "discom:programName",
+                    "@type": "xsd:string"
+                },
+                "programCode": {
+                    "@id": "discom:programCode",
+                    "@type": "xsd:string"
+                },
+                "programType": {
+                    "@id": "discom:programType",
+                    "@type": "xsd:string"
+                },
+                "enrollmentDate": {
+                    "@id": "discom:enrollmentDate",
+                    "@type": "xsd:date"
+                },
+                "enrollmentStatus": {
+                    "@id": "discom:enrollmentStatus",
+                    "@type": "xsd:string"
+                },
+                "validFrom": {
+                    "@id": "discom:validFrom",
+                    "@type": "xsd:date"
+                },
+                "validUntil": {
+                    "@id": "discom:validUntil",
+                    "@type": "xsd:date"
+                }
+            }
+        },
+
+        "DiscomIssuer": {
+            "@id": "discom:DiscomIssuer",
+            "@context": {
+                "@version": 1.1,
+                "@protected": true,
+                "id": "@id",
+                "type": "@type",
+                "name": {
+                    "@id": "schema:name",
+                    "@type": "xsd:string"
+                },
+                "licenseNumber": {
+                    "@id": "discom:licenseNumber",
+                    "@type": "xsd:string"
+                }
+            }
+        }
+    }
+}

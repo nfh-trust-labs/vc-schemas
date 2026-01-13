@@ -1,0 +1,202 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://nfh-trust-labs.github.io/vc-schemas/energy%20credentials/Consumerprofile%20VC/schema.json",
+    "title": "Consumer Profile Onboarding Credential Schema",
+    "description": "JSON Schema for verifying Consumer Profile Onboarding Credentials issued by electricity distribution companies in India",
+    "type": "object",
+    "required": [
+        "@context",
+        "id",
+        "type",
+        "issuer",
+        "issuanceDate",
+        "credentialSubject"
+    ],
+    "properties": {
+        "@context": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "contains": {
+                "const": "https://www.w3.org/2018/credentials/v1"
+            },
+            "minItems": 2
+        },
+        "id": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+            "description": "Unique identifier for the credential in URN UUID format"
+        },
+        "type": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "contains": {
+                "const": "ConsumerProfileOnboardingCredential"
+            },
+            "minItems": 2
+        },
+        "issuer": {
+            "type": "object",
+            "required": ["id", "name", "licenseNumber"],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "DID of the issuing distribution company"
+                },
+                "name": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Name of the distribution company"
+                },
+                "licenseNumber": {
+                    "type": "string",
+                    "pattern": "^[A-Z]+/[0-9]{4}/[A-Z]+/[0-9]+$",
+                    "description": "License number issued by the regulatory commission (e.g., DERC/2004/LICENSE/01)"
+                }
+            }
+        },
+        "issuanceDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Date and time when the credential was issued"
+        },
+        "expirationDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Optional expiration date of the credential"
+        },
+        "credentialSubject": {
+            "type": "object",
+            "required": [
+                "id",
+                "consumerNumber",
+                "fullName",
+                "installationAddress",
+                "premisesType",
+                "connectionType",
+                "sanctionedLoadKW",
+                "tariffCategoryCode",
+                "meterNumber",
+                "serviceConnectionDate"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "DID of the consumer/credential subject"
+                },
+                "consumerNumber": {
+                    "type": "string",
+                    "pattern": "^[A-Z]+-[0-9]{4}-[0-9]+$",
+                    "description": "Unique consumer account number (e.g., BRPL-2025-001234567)"
+                },
+                "fullName": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200,
+                    "description": "Full name of the consumer as registered"
+                },
+                "installationAddress": {
+                    "type": "object",
+                    "required": ["fullAddress", "district", "pincode", "state"],
+                    "properties": {
+                        "fullAddress": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 500,
+                            "description": "Complete street address of the installation"
+                        },
+                        "district": {
+                            "type": "string",
+                            "minLength": 1,
+                            "description": "District name"
+                        },
+                        "pincode": {
+                            "type": "string",
+                            "pattern": "^[1-9][0-9]{5}$",
+                            "description": "6-digit Indian postal PIN code"
+                        },
+                        "state": {
+                            "type": "string",
+                            "minLength": 1,
+                            "description": "State or Union Territory name"
+                        }
+                    }
+                },
+                "premisesType": {
+                    "type": "string",
+                    "enum": ["Residential", "Commercial", "Industrial", "Agricultural", "Institutional", "Government"],
+                    "description": "Type of premises for the electricity connection"
+                },
+                "connectionType": {
+                    "type": "string",
+                    "enum": ["Single-phase", "Three-phase"],
+                    "description": "Type of electrical connection"
+                },
+                "sanctionedLoadKW": {
+                    "type": "number",
+                    "minimum": 0.5,
+                    "maximum": 10000,
+                    "description": "Sanctioned electrical load in kilowatts (kW)"
+                },
+                "tariffCategoryCode": {
+                    "type": "string",
+                    "pattern": "^[A-Z]+-[0-9]+$",
+                    "description": "Tariff category code (e.g., DOM-01 for Domestic)"
+                },
+                "meterNumber": {
+                    "type": "string",
+                    "pattern": "^[A-Z0-9]+$",
+                    "minLength": 10,
+                    "maxLength": 20,
+                    "description": "Unique meter serial number"
+                },
+                "serviceConnectionDate": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "Date when the service connection was established"
+                },
+                "maskedAadhaar": {
+                    "type": "string",
+                    "pattern": "^X{4}-X{4}-[0-9]{4}$",
+                    "description": "Masked Aadhaar number showing only last 4 digits (e.g., XXXX-XXXX-4567)"
+                }
+            }
+        },
+        "proof": {
+            "type": "object",
+            "required": ["type", "created", "verificationMethod", "proofPurpose", "proofValue"],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "description": "Cryptographic signature type"
+                },
+                "created": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Timestamp when the proof was created"
+                },
+                "verificationMethod": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "URI of the verification method/public key"
+                },
+                "proofPurpose": {
+                    "type": "string",
+                    "enum": ["assertionMethod", "authentication"],
+                    "description": "Purpose of the proof"
+                },
+                "proofValue": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "The cryptographic signature value"
+                }
+            }
+        }
+    }
+}

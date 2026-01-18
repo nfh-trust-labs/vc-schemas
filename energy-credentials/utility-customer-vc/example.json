@@ -13,7 +13,8 @@
   "issuanceDate": "2025-01-13T10:30:00Z",
   "credentialSubject": {
     "id": "did:example:consumer:abc123",
-    "maskedConsumerNumber": "XXXX-XXXX-1234",
+    "consumerNumber": "UTIL-2025-001234567",
+    "maskedIdNumber": "XXXX-XXXX-1234",
     "fullName": "Jane Doe",
     "installationAddress": {
       "fullAddress": "123 Energy Street, Unit 4",

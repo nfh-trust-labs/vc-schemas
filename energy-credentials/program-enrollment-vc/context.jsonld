@@ -19,6 +19,10 @@
                     "@id": "utility:consumerNumber",
                     "@type": "xsd:string"
                 },
+                "fullName": {
+                    "@id": "schema:name",
+                    "@type": "xsd:string"
+                },
                 "programName": {
                     "@id": "utility:programName",
                     "@type": "xsd:string"

@@ -23,6 +23,7 @@ This information is useful for load management, demand response programs, and ta
 | connectionType | Single-phase/Three-phase | Yes |
 | sanctionedLoadKW | Allotted/approved electrical load in kW | Yes |
 | tariffCategoryCode | Billing category code | Yes |
+| meterNumber | Meter serial number (for linking to specific meter) | No |
 
 ### Premises Types
 

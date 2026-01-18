@@ -18,6 +18,9 @@ This information is useful for grid management, net metering programs, and renew
 |-------|-------------|----------|
 | id | Customer DID (links to customer) | Yes |
 | consumerNumber | Consumer account number | Yes |
+| fullName | Consumer name | No |
+| meterNumber | Meter serial number associated with this asset | No |
+| assetId | Unique identifier for this generation asset | No |
 | generationType | Solar / Wind / MicroHydro / Other | Yes |
 | capacityKW | Installed generation capacity in kW | Yes |
 | commissioningDate | Date when generation was activated | Yes |

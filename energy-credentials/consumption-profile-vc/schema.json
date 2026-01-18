@@ -118,6 +118,12 @@
                     "type": "string",
                     "minLength": 1,
                     "description": "Billing/tariff category code assigned by the utility"
+                },
+                "meterNumber": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 50,
+                    "description": "Meter serial number (optional, for linking to specific meter)"
                 }
             }
         },

@@ -90,6 +90,23 @@
                     "minLength": 1,
                     "description": "Consumer account number assigned by the utility"
                 },
+                "fullName": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200,
+                    "description": "Consumer name (optional)"
+                },
+                "meterNumber": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 50,
+                    "description": "Meter serial number associated with this generation asset (optional)"
+                },
+                "assetId": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Unique identifier for the generation asset (optional, useful when customer has multiple DERs)"
+                },
                 "generationType": {
                     "type": "string",
                     "enum": ["Solar", "Wind", "MicroHydro", "Other"],

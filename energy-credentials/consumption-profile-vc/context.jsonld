@@ -38,6 +38,10 @@
                 "tariffCategoryCode": {
                     "@id": "consumption:tariffCategoryCode",
                     "@type": "xsd:string"
+                },
+                "meterNumber": {
+                    "@id": "consumption:meterNumber",
+                    "@type": "xsd:string"
                 }
             }
         },

@@ -90,6 +90,23 @@
                     "minLength": 1,
                     "description": "Consumer account number assigned by the utility"
                 },
+                "fullName": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200,
+                    "description": "Consumer name (optional)"
+                },
+                "meterNumber": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 50,
+                    "description": "Meter serial number associated with this storage asset (optional)"
+                },
+                "assetId": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Unique identifier for the storage asset (optional, useful when customer has multiple batteries)"
+                },
                 "storageCapacityKWh": {
                     "type": "number",
                     "minimum": 0.1,

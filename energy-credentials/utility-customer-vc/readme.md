@@ -14,7 +14,8 @@ This credential provides a minimal set of identity fields needed to:
 | Field | Description | Required |
 |-------|-------------|----------|
 | id | Customer DID | Yes |
-| maskedConsumerNumber | Partial/masked consumer number (e.g., "XXXX-XXXX-1234") | Yes |
+| consumerNumber | Full consumer account number assigned by the utility | Yes |
+| maskedIdNumber | Optional masked government ID (e.g., driving license, national ID) | No |
 | fullName | Full name as per ID proof | Yes |
 | installationAddress | Full address object | Yes |
 | meterNumber | Meter serial number | Yes |
@@ -53,7 +54,8 @@ This credential serves as the base identity credential. Other profile credential
   "type": ["VerifiableCredential", "UtilityCustomerCredential"],
   "credentialSubject": {
     "id": "did:example:consumer:abc123",
-    "maskedConsumerNumber": "XXXX-XXXX-1234",
+    "consumerNumber": "UTIL-2025-001234567",
+    "maskedIdNumber": "XXXX-XXXX-1234",
     "fullName": "Jane Doe",
     "installationAddress": { ... },
     "meterNumber": "MET2025789456123",

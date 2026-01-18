@@ -15,8 +15,12 @@
                 "@protected": true,
                 "id": "@id",
                 "type": "@type",
-                "maskedConsumerNumber": {
-                    "@id": "utility:maskedConsumerNumber",
+                "consumerNumber": {
+                    "@id": "utility:consumerNumber",
+                    "@type": "xsd:string"
+                },
+                "maskedIdNumber": {
+                    "@id": "utility:maskedIdNumber",
                     "@type": "xsd:string"
                 },
                 "fullName": {

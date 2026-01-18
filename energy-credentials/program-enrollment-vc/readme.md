@@ -15,6 +15,7 @@ This credential is issued by electricity distribution utilities when a consumer 
 | Field | Description | Required |
 | :---- | :---- | :----: |
 | consumerNumber | Unique consumer account number | Yes |
+| fullName | Consumer name | No |
 | programName | Human-readable program name | Yes |
 | programCode | Unique program identifier | Yes |
 | enrollmentDate | Date of enrollment | Yes |

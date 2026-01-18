@@ -18,7 +18,8 @@
     "premisesType": "Residential",
     "connectionType": "Single-phase",
     "sanctionedLoadKW": 5,
-    "tariffCategoryCode": "RES-01"
+    "tariffCategoryCode": "RES-01",
+    "meterNumber": "MET2025789456123"
   },
   "proof": {
     "type": "Ed25519Signature2020",

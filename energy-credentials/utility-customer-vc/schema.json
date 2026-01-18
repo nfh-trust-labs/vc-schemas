@@ -74,7 +74,7 @@
             "type": "object",
             "required": [
                 "id",
-                "maskedConsumerNumber",
+                "consumerNumber",
                 "fullName",
                 "installationAddress",
                 "meterNumber",
@@ -86,11 +86,15 @@
                     "format": "uri",
                     "description": "DID of the customer/credential subject"
                 },
-                "maskedConsumerNumber": {
+                "consumerNumber": {
                     "type": "string",
                     "minLength": 1,
-                    "pattern": "^[X\\-0-9]+$",
-                    "description": "Partial/masked consumer number for privacy (e.g., 'XXXX-XXXX-1234')"
+                    "description": "Full consumer account number assigned by the utility"
+                },
+                "maskedIdNumber": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Optional masked government ID (e.g., driving license, national ID) for additional verification (e.g., 'XXXX-XXXX-1234')"
                 },
                 "fullName": {
                     "type": "string",

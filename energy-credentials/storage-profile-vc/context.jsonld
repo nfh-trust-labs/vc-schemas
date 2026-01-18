@@ -19,6 +19,18 @@
                     "@id": "storage:consumerNumber",
                     "@type": "xsd:string"
                 },
+                "fullName": {
+                    "@id": "schema:name",
+                    "@type": "xsd:string"
+                },
+                "meterNumber": {
+                    "@id": "storage:meterNumber",
+                    "@type": "xsd:string"
+                },
+                "assetId": {
+                    "@id": "storage:assetId",
+                    "@type": "xsd:string"
+                },
                 "storageCapacityKWh": {
                     "@id": "storage:storageCapacityKWh",
                     "@type": "xsd:decimal"

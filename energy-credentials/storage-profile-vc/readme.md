@@ -18,6 +18,9 @@ This information is useful for grid management, virtual power plant programs, de
 |-------|-------------|----------|
 | id | Customer DID (links to customer) | Yes |
 | consumerNumber | Consumer account number | Yes |
+| fullName | Consumer name | No |
+| meterNumber | Meter serial number associated with this asset | No |
+| assetId | Unique identifier for this storage asset | No |
 | storageCapacityKWh | Battery storage capacity in kWh | Yes |
 | powerRatingKW | Charge/discharge power rating in kW | Yes |
 | commissioningDate | Date when storage was activated | Yes |

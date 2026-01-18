@@ -1,10 +1,10 @@
 {
   "@context": [
     "https://www.w3.org/2018/credentials/v1",
-    "https://nfh-trust-labs.github.io/vc-schemas/energy-credentials/consumer-profile-vc/context.jsonld"
+    "https://nfh-trust-labs.github.io/vc-schemas/energy-credentials/utility-customer-vc/context.jsonld"
   ],
-  "id": "urn:uuid:3a5b8c9d-1234-5678-abcd-ef9012345678",
-  "type": ["VerifiableCredential", "UtilityConsumerCredential"],
+  "id": "urn:uuid:a1b2c3d4-5678-90ab-cdef-123456789012",
+  "type": ["VerifiableCredential", "UtilityCustomerCredential"],
   "issuer": {
     "id": "did:web:example-utility.com",
     "name": "Example Energy Utility",
@@ -13,7 +13,7 @@
   "issuanceDate": "2025-01-13T10:30:00Z",
   "credentialSubject": {
     "id": "did:example:consumer:abc123",
-    "consumerNumber": "UTIL-2025-001234567",
+    "maskedConsumerNumber": "XXXX-XXXX-1234",
     "fullName": "Jane Doe",
     "installationAddress": {
       "fullAddress": "123 Energy Street, Unit 4",
@@ -23,21 +23,8 @@
       "postalCode": "12345",
       "country": "US"
     },
-    "premisesType": "Residential",
-    "connectionType": "Single-phase",
-    "sanctionedLoadKW": 5,
-    "tariffCategoryCode": "RES-01",
     "meterNumber": "MET2025789456123",
-    "serviceConnectionDate": "2025-01-10",
-    "derSolar": {
-      "capacityKWp": 3,
-      "commissioningDate": "2025-01-12"
-    },
-    "derBattery": {
-      "storageCapacityKWh": 10,
-      "powerRatingKW": 5,
-      "commissioningDate": "2025-01-12"
-    }
+    "serviceConnectionDate": "2025-01-10"
   },
   "proof": {
     "type": "Ed25519Signature2020",

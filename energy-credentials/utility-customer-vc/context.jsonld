@@ -6,17 +6,17 @@
         "type": "@type",
         "schema": "https://schema.org/",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
-        "utility": "https://nfh-trust-labs.github.io/vc-schemas/energy-credentials/consumer-profile-vc/context.jsonld#",
+        "utility": "https://nfh-trust-labs.github.io/vc-schemas/energy-credentials/utility-customer-vc/context.jsonld#",
 
-        "UtilityConsumerCredential": {
-            "@id": "utility:UtilityConsumerCredential",
+        "UtilityCustomerCredential": {
+            "@id": "utility:UtilityCustomerCredential",
             "@context": {
                 "@version": 1.1,
                 "@protected": true,
                 "id": "@id",
                 "type": "@type",
-                "consumerNumber": {
-                    "@id": "utility:consumerNumber",
+                "maskedConsumerNumber": {
+                    "@id": "utility:maskedConsumerNumber",
                     "@type": "xsd:string"
                 },
                 "fullName": {
@@ -53,22 +53,6 @@
                         }
                     }
                 },
-                "premisesType": {
-                    "@id": "utility:premisesType",
-                    "@type": "xsd:string"
-                },
-                "connectionType": {
-                    "@id": "utility:connectionType",
-                    "@type": "xsd:string"
-                },
-                "sanctionedLoadKW": {
-                    "@id": "utility:sanctionedLoadKW",
-                    "@type": "xsd:decimal"
-                },
-                "tariffCategoryCode": {
-                    "@id": "utility:tariffCategoryCode",
-                    "@type": "xsd:string"
-                },
                 "meterNumber": {
                     "@id": "utility:meterNumber",
                     "@type": "xsd:string"
@@ -76,38 +60,6 @@
                 "serviceConnectionDate": {
                     "@id": "utility:serviceConnectionDate",
                     "@type": "xsd:date"
-                },
-                "derSolar": {
-                    "@id": "utility:derSolar",
-                    "@type": "@id",
-                    "@context": {
-                        "capacityKWp": {
-                            "@id": "utility:capacityKWp",
-                            "@type": "xsd:decimal"
-                        },
-                        "commissioningDate": {
-                            "@id": "utility:commissioningDate",
-                            "@type": "xsd:date"
-                        }
-                    }
-                },
-                "derBattery": {
-                    "@id": "utility:derBattery",
-                    "@type": "@id",
-                    "@context": {
-                        "storageCapacityKWh": {
-                            "@id": "utility:storageCapacityKWh",
-                            "@type": "xsd:decimal"
-                        },
-                        "powerRatingKW": {
-                            "@id": "utility:powerRatingKW",
-                            "@type": "xsd:decimal"
-                        },
-                        "commissioningDate": {
-                            "@id": "utility:commissioningDate",
-                            "@type": "xsd:date"
-                        }
-                    }
                 }
             }
         },

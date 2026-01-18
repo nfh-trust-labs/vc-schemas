@@ -16,6 +16,12 @@ This repository maintains JSON-LD schemas for various types of verifiable creden
 | Schema | Description | Status |
 |--------|-------------|--------|
 | [Salary Slip](./schemas/salary-slip/) | Universal salary slip/payslip schema | ✅ Active |
+| **Energy Credentials** | | |
+| [Utility Customer](./energy-credentials/utility-customer-vc/) | Privacy-preserving customer identity | ✅ Active |
+| [Consumption Profile](./energy-credentials/consumption-profile-vc/) | Connection and load characteristics | ✅ Active |
+| [Generation Profile](./energy-credentials/generation-profile-vc/) | DER generation capability (Solar/Wind/etc.) | ✅ Active |
+| [Storage Profile](./energy-credentials/storage-profile-vc/) | Battery/energy storage capability | ✅ Active |
+| [Program Enrollment](./energy-credentials/program-enrollment-vc/) | Energy program participation | ✅ Active |
 
 ## Schema.org Alignment
 

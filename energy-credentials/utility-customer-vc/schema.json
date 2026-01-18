@@ -1,8 +1,8 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://nfh-trust-labs.github.io/vc-schemas/energy-credentials/consumer-profile-vc/schema.json",
-    "title": "Utility Consumer Credential Schema",
-    "description": "JSON Schema for verifying Consumer/Prosumer Credentials issued by electricity distribution utilities. A pure consumer has no DER blocks, while a prosumer has at least one (derSolar or derBattery).",
+    "$id": "https://nfh-trust-labs.github.io/vc-schemas/energy-credentials/utility-customer-vc/schema.json",
+    "title": "Utility Customer Credential Schema",
+    "description": "JSON Schema for a barebones identity credential for privacy-preserving customer identification issued by electricity distribution utilities.",
     "type": "object",
     "required": [
         "@context",
@@ -35,7 +35,7 @@
                 "type": "string"
             },
             "contains": {
-                "const": "UtilityConsumerCredential"
+                "const": "UtilityCustomerCredential"
             },
             "minItems": 2
         },
@@ -74,13 +74,9 @@
             "type": "object",
             "required": [
                 "id",
-                "consumerNumber",
+                "maskedConsumerNumber",
                 "fullName",
                 "installationAddress",
-                "premisesType",
-                "connectionType",
-                "sanctionedLoadKW",
-                "tariffCategoryCode",
                 "meterNumber",
                 "serviceConnectionDate"
             ],
@@ -88,18 +84,19 @@
                 "id": {
                     "type": "string",
                     "format": "uri",
-                    "description": "DID of the consumer/credential subject"
+                    "description": "DID of the customer/credential subject"
                 },
-                "consumerNumber": {
+                "maskedConsumerNumber": {
                     "type": "string",
                     "minLength": 1,
-                    "description": "Unique consumer/customer account number assigned by the utility"
+                    "pattern": "^[X\\-0-9]+$",
+                    "description": "Partial/masked consumer number for privacy (e.g., 'XXXX-XXXX-1234')"
                 },
                 "fullName": {
                     "type": "string",
                     "minLength": 1,
                     "maxLength": 200,
-                    "description": "Full name of the consumer as per ID proof"
+                    "description": "Full name of the customer as per ID proof"
                 },
                 "installationAddress": {
                     "type": "object",
@@ -138,27 +135,6 @@
                         }
                     }
                 },
-                "premisesType": {
-                    "type": "string",
-                    "enum": ["Residential", "Commercial", "Industrial", "Agricultural"],
-                    "description": "Type of premises for the electricity connection"
-                },
-                "connectionType": {
-                    "type": "string",
-                    "enum": ["Single-phase", "Three-phase"],
-                    "description": "Type of electrical connection"
-                },
-                "sanctionedLoadKW": {
-                    "type": "number",
-                    "minimum": 0.5,
-                    "maximum": 10000,
-                    "description": "Sanctioned/approved electrical load in kilowatts (kW)"
-                },
-                "tariffCategoryCode": {
-                    "type": "string",
-                    "minLength": 1,
-                    "description": "Billing/tariff category code assigned by the utility"
-                },
                 "meterNumber": {
                     "type": "string",
                     "minLength": 1,
@@ -169,48 +145,6 @@
                     "type": "string",
                     "format": "date",
                     "description": "Date when the connection was activated"
-                },
-                "derSolar": {
-                    "type": "object",
-                    "description": "Distributed Energy Resource - Solar installation details. If present, indicates the consumer is a prosumer with solar generation capability.",
-                    "required": ["capacityKWp", "commissioningDate"],
-                    "properties": {
-                        "capacityKWp": {
-                            "type": "number",
-                            "minimum": 0.1,
-                            "maximum": 10000,
-                            "description": "Installed solar generation capacity in kilowatts peak (kWp)"
-                        },
-                        "commissioningDate": {
-                            "type": "string",
-                            "format": "date",
-                            "description": "Date when solar installation was activated"
-                        }
-                    }
-                },
-                "derBattery": {
-                    "type": "object",
-                    "description": "Distributed Energy Resource - Battery storage details. If present, indicates the consumer is a prosumer with battery storage capability.",
-                    "required": ["storageCapacityKWh", "powerRatingKW", "commissioningDate"],
-                    "properties": {
-                        "storageCapacityKWh": {
-                            "type": "number",
-                            "minimum": 0.1,
-                            "maximum": 10000,
-                            "description": "Battery storage capacity in kilowatt-hours (kWh)"
-                        },
-                        "powerRatingKW": {
-                            "type": "number",
-                            "minimum": 0.1,
-                            "maximum": 10000,
-                            "description": "Battery charge/discharge power rating in kilowatts (kW)"
-                        },
-                        "commissioningDate": {
-                            "type": "string",
-                            "format": "date",
-                            "description": "Date when battery storage was activated"
-                        }
-                    }
                 }
             }
         },
